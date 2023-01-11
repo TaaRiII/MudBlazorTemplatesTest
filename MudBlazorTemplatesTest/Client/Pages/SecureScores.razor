@@ -1,0 +1,245 @@
+﻿@page "/securescorces"
+@inject HttpClient httpClient
+<style>
+    .main-paper{
+        border-radius:8px;
+    }
+    .header-text{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+    }
+   
+    .inner-text{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #252423;
+    }
+
+    .inner-button{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        text-transform:capitalize;
+        padding:6px 35px;
+    }
+
+    .shop-button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 36px;
+        gap: 10px;
+    }
+</style>
+
+<MudPaper Class=" main-paper pa-6 ma-2" Outlined="true">
+    <MudText Class="header-text pb-4"  Typo="Typo.h3" Color="Color.Primary">Looks like you are new here!</MudText>
+    <MudText Class="inner-text" Typo="Typo.subtitle1">
+        Hi, this is Bob! To get started you will need to consent to allow our app to view your security settings.  </MudText>
+    <MudText Class="inner-text" Typo="Typo.subtitle1"> Don’t worry, you can always remove them by deleting our Enterprise App. </MudText>
+    <MudText Class="inner-text" Typo="Typo.subtitle1">  Your user profile must have access to read security events for us to do our job. </MudText>
+    <MudText Class="inner-text pb-4" Typo="Typo.subtitle1"> This means you are a member of the Security Reader role or similar. </MudText>
+
+    <MudText Class="inner-text pb-4" Typo="Typo.subtitle1">
+        If that is you then click “I Consent” below.
+    </MudText>
+    <MudButton Class="inner-button" Variant="Variant.Filled" Color="Color.Primary">I Consent</MudButton>
+</MudPaper>
+<MudGrid Class="pb-4">
+    <MudItem Class="d-flex flex-row" xs="6">Welcome, Miranda! </MudItem>
+    <MudItem Class="d-flex flex-row-reverse" xs="6">
+        <MudLink Href="#" Typo="Typo.body2">Questions about products?<b> Contact our Sales Team</b></MudLink>
+       </MudItem>
+</MudGrid>
+<MudGrid Class="pb-4">
+    <MudItem xs="12" lg="8">
+        <MudText Typo="Typo.h5"><b>Secure Scores</b></MudText>
+        <MudText Class="pt-2" Typo="Typo.subtitle1" >
+            Understand and reduce cyber risk by knowing your Secure Scores
+        </MudText>
+        <MudText Class="inner-text" Typo="Typo.subtitle1" >
+            Following the Secure Score recommendations can protect your organization from threats.</MudText>
+    </MudItem >
+    <MudItem Class="d-flex flex-row-reverse py-10" xs="12" lg="4">
+        <MudButton Class="shop-button" Size="Size.Small" Variant=" Variant.Filled" Color="Color.Primary">Shop for Cybersecurity Plans</MudButton>
+    </MudItem>
+</MudGrid>
+
+<MudTabs  Class="pb-4" Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+    <MudTabPanel Text="Overview">
+        <MudGrid>
+            <MudItem xs="12" lg="6">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    <MudText Typo="Typo.h5" Class="pb-2"><b>Breakdown by Category</b></MudText>
+                    @*<MudGrid>
+                        <MudItem lg="2">*@
+                            <div>
+                    <MudText Class="d-inline-flex   mud-text-secondary" Typo="Typo.body2">Identity:</MudText>
+                      @*  </MudItem>
+                        <MudItem lg="4*@
+                    <MudText Class="d-inline-flex " Typo="Typo.caption">10/71 points</MudText>
+                          @*  </MudItem>
+                        <MudItem lg="5">*@
+                    <MudText Class="d-inline-flex" Typo="Typo.caption">14.08%</MudText>
+                       @* </MudItem>
+                                           
+                    </MudGrid>*@
+                    </div>
+                    <MudProgressLinear  Color="Color.Primary" Rounded="true" Size="Size.Medium" Value="50" Class="my-2" />
+
+                 
+                   
+                    <MudText Class="d-inline-flex flex-row  mud-text-secondary" Typo="Typo.body2">Apps:</MudText>
+                    
+                    <MudText Class="d-inline-flex flex-row " Typo="Typo.caption">122/177 points</MudText>
+                       
+                    <MudText Class="d-inline-flex flex-row-reverse" Typo="Typo.caption">68.93%</MudText>
+                    
+                    <MudProgressLinear  Color="Color.Primary" Rounded="true" Size="Size.Medium" Value="50" Class="my-2" />
+
+                   
+                  
+                    <MudText Class="d-inline-flex flex-row  mud-text-secondary" Typo="Typo.body2">Data:</MudText>
+                   
+                    <MudText Class="d-inline-flex flex-row " Typo="Typo.caption">7/9 points</MudText>
+                      
+                    <MudText Class="d-inline-flex flex-row-reverse" Typo="Typo.caption">77.78%</MudText>
+                    
+                    <MudProgressLinear  Color="Color.Primary" Rounded="true" Size="Size.Medium" Value="50" Class="my-2" />
+       
+                </MudPaper>
+              
+                </MudItem>
+            <MudItem xs="12" lg="6">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    <MudText Typo="Typo.h5" Class="pb-2"><b>Comparison</b></MudText>
+                    @*<MudGrid>
+                    <MudItem lg="2">*@
+                    <MudText Class="d-inline-flex flex-row  mud-text-secondary" Typo="Typo.body2">Your Score:</MudText>
+                    @*  </MudItem>
+                    <MudItem lg="4*@
+              
+                    @*  </MudItem>
+                    <MudItem lg="5">*@
+                    <MudText Class="d-inline-flex flex-row-reverse" Typo="Typo.caption">57.68%</MudText>
+                    @* </MudItem>
+
+                    </MudGrid>*@
+                    <MudProgressLinear Color="Color.Primary" Rounded="true" Size="Size.Medium" Value="50" Class="my-2" />
+
+
+
+                    <MudText Class="d-inline-flex flex-row  mud-text-secondary" Typo="Typo.body2">All Organization:</MudText>
+
+
+                    <MudText Class="d-inline-flex flex-row-reverse" Typo="Typo.caption">0%</MudText>
+
+                    <MudProgressLinear Color="Color.Primary" Rounded="true" Size="Size.Medium" Value="50" Class="my-2" />
+                </MudPaper>
+          
+                </MudItem>
+
+        </MudGrid>
+    </MudTabPanel>
+    <MudTabPanel Text="Recommended Actions">
+    </MudTabPanel>
+</MudTabs>
+
+<MudDivider DividerType="DividerType.FullWidth" Class="my-8" />
+
+<MudText Typo="Typo.h5" Class="pb-2"><b>Top 10 Recommended Actions</b></MudText>
+<MudText Class="d-flex flex-row " Typo="Typo.body2">These actions will do the most for your score</MudText>
+
+<MudPaper Class="d-flex flex-row flex-grow-1 gap-4 pt-4 pb-4" Elevation="0">
+    <MudText Class="d-inline-flex flex-row py-2 " Typo="Typo.body2">Select Categories</MudText>
+    <MudButton Variant="Variant.Outlined" Size="Size.Small">Identity</MudButton>
+    <MudButton Variant="Variant.Outlined" Size="Size.Small">Apps</MudButton>
+</MudPaper>
+
+<MudTable Class="pt-4 pb-4" Items="@TestList" Hover="true" Filter="new Func<TestModal,bool>(FilterCycleCheck)">
+  @*  <ToolBarContent>
+        <MudText Typo="Typo.h6">My Table</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchterm" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>*@
+    <HeaderContent>
+        <MudTh>BEMO Package</MudTh>
+        <MudTh>Rank</MudTh>
+        <MudTh>Title</MudTh>
+        <MudTh>Score Impact</MudTh>
+        <MudTh>Points Achieved</MudTh>
+        <MudTh>Status</MudTh>
+        <MudTh>Company</MudTh>
+        <MudTh>Product</MudTh>
+
+    </HeaderContent>
+    <RowTemplate>
+        @*<MudTd DataLabel="id">@context.id</MudTd>
+        <MudTd DataLabel="Title">@context.Title</MudTd>
+        <MudTd DataLabel="Title">@context.Name</MudTd>
+        <MudTd DataLabel="val 1">@context.val1</MudTd>
+        <MudTd DataLabel="val 2">@context.val2</MudTd>*@
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[]{10,20}" />
+    </PagerContent>
+</MudTable>
+
+<MudPaper Class="d-flex flex-row flex-grow-1 gap-4" Width="100%" Elevation="0">
+    <MudText Class="d-inline-flex flex-row py-2 " Typo="Typo.body2">Select Categories</MudText>
+</MudPaper>
+
+
+
+
+@code {
+    public string TextValue { get; set; }
+    string searchterm = "";
+    List<TestModal> TestList = new List<TestModal>();
+    protected override async Task OnInitializedAsync()
+    {
+        var rnd = new Random();
+        for(int i = 0; i < 20; i++)
+        {
+
+            TestList.Add(new TestModal()
+                {
+                    id = Guid.NewGuid().ToString(),
+                    Title = "test" + i.ToString(),
+                    Name = "name" + i.ToString(),
+                    val1 = rnd.Next(200, 5000),
+                    val2 = rnd.Next(200, 5000)
+                });
+        }
+    }
+    private bool FilterCycleCheck(TestModal item)
+    {
+
+        if (item.Title.Contains(searchterm))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public class TestModal
+    {
+        public string? id { get; set; }
+        public string? Title { get; set; }
+        public string? Name { get; set; }
+        public int val1 { get; set; }
+        public int val2 { get; set; }
+
+    }
+}

@@ -1,0 +1,94 @@
+﻿@page "/datatable"
+@inject HttpClient httpClient
+
+
+
+<MudCard>
+    <MudCardContent>
+        <MudGrid>
+             <MudItem xs="5">
+                <MudText>Title</MudText>
+                <MudTextField @bind-Value="TextValue" Label="Title" Variant="Variant.Outlined"></MudTextField>
+            </MudItem>
+            <MudItem xs="5">
+                <MudText>Name</MudText>
+                <MudTextField @bind-Value="TextValue" Label="Name" Variant="Variant.Outlined"></MudTextField>
+            </MudItem>
+            <MudItem xs="2">
+                <MudText Class="pb-3">Action</MudText>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" IconColor="Color.Secondary" Size="Size.Large">Save</MudButton>
+            </MudItem>
+        </MudGrid>
+
+    </MudCardContent>
+</MudCard>
+
+
+<MudDivider DividerType="DividerType.Middle" />
+<MudTable Items="@TestList" Hover="true" Striped="true" Filter="new Func<TestModal,bool>(FilterCycleCheck)">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">My Table</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchterm" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>ID</MudTh>
+        <MudTh>Title</MudTh>
+        <MudTh>Name</MudTh>
+        <MudTh>Val1</MudTh>
+        <MudTh>Val2</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="id">@context.id</MudTd>
+        <MudTd DataLabel="Title">@context.Title</MudTd>
+        <MudTd DataLabel="Title">@context.Name</MudTd>
+        <MudTd DataLabel="val 1">@context.val1</MudTd>
+        <MudTd DataLabel="val 2">@context.val2</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[]{10,20}" />
+    </PagerContent>
+</MudTable>
+
+@code {
+    public string TextValue { get; set; }
+    string searchterm = "";
+    List<TestModal> TestList = new List<TestModal>();
+    protected override async Task OnInitializedAsync()
+    {
+        var rnd = new Random();
+        for(int i = 0; i < 20; i++)
+        {
+
+            TestList.Add(new TestModal()
+                {
+                    id = Guid.NewGuid().ToString(),
+                    Title = "test" + i.ToString(),
+                    Name = "name" + i.ToString(),
+                    val1 = rnd.Next(200, 5000),
+                    val2 = rnd.Next(200, 5000)
+                });
+        }
+    }
+    private bool FilterCycleCheck(TestModal item)
+    {
+
+        if (item.Title.Contains(searchterm))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public class TestModal
+    {
+        public string? id { get; set; }
+        public string? Title { get; set; }
+        public string? Name { get; set; }
+        public int val1 { get; set; }
+        public int val2 { get; set; }
+
+    }
+}
