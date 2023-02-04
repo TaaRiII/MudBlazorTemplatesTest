@@ -1,0 +1,319 @@
+﻿@page "/taskone"
+
+<style>
+.h1{
+        /* Bold/H1 */
+
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 28px;
+        /* identical to box height, or 88% */
+        /* Highlight Text */
+
+        color: #001D4F;
+}
+.h3{
+       
+        /* Bold/H3 */
+
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        /* identical to box height, or 140% */
+        /* Highlight Text */
+
+        color: #001D4F;
+}
+.h4{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        /* Highlight Text */
+
+        color: #001D4F;
+    }
+
+.texttitle{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        /* identical to box height, or 133% */
+
+        font-variant: small-caps;
+        /* Cool Gray */
+
+        color: #748AA3;
+}
+.h4{
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        /* Highlight Text */
+
+        color: #001D4F;
+}
+.linktext{
+        display: block;
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        /* Primary */
+
+        color: #3978D3;
+
+}
+
+.infoBtn{
+        border-radius: 24px;
+}
+
+ .align-right{
+        align-items: end;
+        /* padding: 0; */
+        display: inline-flex;
+        flex-direction: column;
+ }
+
+    .align-left {
+        align-items: start;
+        /* padding: 0; */
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+</style>
+
+
+<MudGrid Class="pb-4">
+    <MudItem Class="d-flex flex-row"  xs="6">Welcome, Miranda! </MudItem>
+    <MudItem Class="d-flex flex-row-reverse"  xs="6">
+        <MudLink Href="#" Typo="Typo.body2">Questions about products?<b> Contact our Sales Team</b></MudLink>
+    </MudItem>
+</MudGrid>
+<MudGrid Class="pb-4">
+    <MudItem xs="12" lg="12">
+        <MudText Class="h1">BEMO Admin Center</MudText>
+    </MudItem>
+</MudGrid>
+
+ <MudGrid Class="pb-4">
+        <MudItem xs="12" md="6" lg="6">
+<MudPaper  Class="pa-3" Outlined="true">
+
+            <MudGrid>
+                    <MudItem Class="pb-2" xs="12" lg="12">
+                    <MudText Class="h3">Customer Details</MudText>
+                    </MudItem>
+                <MudItem Class="pb-3" xs="12" md="6" lg="6">
+                    <MudText Class="texttitle  pt-3">Customer Id</MudText>
+                    <MudText Class="h4">87128414-abdf-432526-sfdg</MudText>
+                    <MudText Class="texttitle  pt-3">First Name</MudText>
+                    <MudText Class="h4">Miranda</MudText>
+                    <MudText Class="texttitle  pt-3">Email</MudText>
+                    <MudText Class="h4">miranda@email.com</MudText>
+                    <MudText Class="texttitle  pt-3">MS Microsoft Id</MudText>
+                    <MudText Class="h4">278428974189-adada-34235</MudText>
+                    <MudText Class="texttitle  pt-3">MS Special Qualifications Short</MudText>
+                    <MudText Class="h4">None</MudText>
+                    
+                 
+            </MudItem>
+                <MudItem Class="pb-3" xs="12" md="6" lg="6">
+                    <MudText Class="texttitle  pt-3">Company</MudText>
+                    <MudText Class="h4">KSR Enterprises</MudText>
+                    <MudText Class="texttitle  pt-3">Last Name</MudText>
+                    <MudText Class="h4">Cosgrove</MudText>
+                    <MudText Class="texttitle  pt-3">Phone</MudText>
+                    <MudText Class="h4">34235435363</MudText>
+                    <MudText Class="texttitle  pt-3">MS Domain Name</MudText>
+                    <MudText Class="h4">miranda.onmicrosoft.com</MudText>
+                    <MudText Class="texttitle  pt-3">MS Relationship</MudText>
+                    <MudText Class="h4">Reseller</MudText>
+                </MudItem>
+            </MudGrid>
+            <MudDivider DividerType="DividerType.FullWidth" Class="my-8" />
+            <MudGrid>
+                <MudItem Class="align-left" xs="12" md="6" lg="6">
+                    <MudText Class="h3 ">Additional Contacts</MudText>
+                </MudItem>
+                <MudItem class="align-right" xs="12" md="6" lg="6">
+                    <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Contact</MudButton>
+      @*  <MudButton Class="shop-button" Size="Size.Small" Variant=" Variant.Filled" Color="Color.Primary">Shop for Cybersecurity Plans</MudButton>*@
+
+
+
+                </MudItem>
+            </MudGrid>
+            <MudGrid>
+                <MudItem>
+            @*        <MudTable Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+                        <HeaderContent>
+                            <MudTh>Nr</MudTh>
+                            <MudTh>Sign</MudTh>
+                            <MudTh>Name</MudTh>
+                            <MudTh>Position</MudTh>
+                            <MudTh>Molar mass</MudTh>
+                        </HeaderContent>
+                        <RowTemplate>
+                            <MudTd DataLabel="Nr">Number</MudTd>
+                            <MudTd DataLabel="Nr">Number</MudTd>
+                            <MudTd DataLabel="Nr">Number</MudTd>
+                            <MudTd DataLabel="Nr">Number</MudTd>
+
+                        </RowTemplate>
+                    </MudTable>*@
+                </MudItem>
+            </MudGrid>
+
+
+        </MudPaper>
+             </MudItem> <MudItem xs="12" md="6" lg="6">
+<MudPaper  Class="pa-3" Outlined="true">
+
+            <MudGrid>
+                    <MudItem Class="pb-2" xs="12" lg="12">
+                    <MudText Class="h3">Billing Info</MudText>
+                    </MudItem>
+                <MudItem Class="pb-3" xs="12" md="6" lg="6">
+                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">2200 12th Ave E</MudLink>
+                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">Seattle - 98102</MudLink>
+                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">Washington</MudLink>
+                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">US</MudLink>
+                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">3534367536</MudLink>
+                    <MudLink Class="linktext  pt-3" Href="#"  Underline="Underline.None">
+                        @*<MudIcon @Icons.Material.Filled.LocalPhone Title="API" />*@
+                        miranda@email.com
+                    </MudLink>
+                 
+                 
+            </MudItem>
+            </MudGrid>
+            <MudDivider DividerType="DividerType.FullWidth" Class="my-8" />
+            <MudGrid Class="pb-4">
+                <MudItem Class="align-left" xs="12" md="6" lg="6">
+                    <MudText Class="h3">Payment Methods</MudText>
+                </MudItem>
+                <MudItem class="align-right" lg="6" xs="12">
+                    <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Card</MudButton>
+                </MudItem>
+            </MudGrid>
+            <MudPaper Class="pa-3" Outlined="true">
+                <MudGrid>
+                    <MudItem Class="align-left" xs="12" md="6" lg="6">
+                        <MudText Class="h3">VISA</MudText>
+                    </MudItem>
+                    <MudItem class="align-right"  lg="6" xs="12">
+                        <MudButton Class="infoBtn" Variant="Variant.Filled" Color="Color.Info" Size="Size.Small">Primary Card</MudButton>
+                    </MudItem>
+                    <MudItem xs="12" lg="12">
+
+                        <MudText Class="h4">VISA ending 4242</MudText>
+                        <MudLink Class="linktext  pt-2" Href="#" Underline="Underline.None">Visa Stripe</MudLink>
+
+                    </MudItem>
+                    <MudItem Class="p" xs="12" md="6" lg="6">
+                        <MudText Class="texttitle">ID</MudText>
+                        <MudText Class="h4">87128414-abdf-432526-sfdg</MudText>
+                        <MudText Class="texttitle  pt-3">Expiry Date</MudText>
+                        <MudText Class="h4">5-2026</MudText>
+                        <MudText Class="texttitle  pt-3">First Name</MudText>
+                        <MudText Class="h4">Miranda</MudText>
+                       
+                    </MudItem>
+                    <MudItem Class="" xs="12" md="6" lg="6">
+                        <MudText Class="texttitle">Reference ID</MudText>
+                        <MudText Class="h4">ergdh_afsjgjKNGSKNS/card_1nfsja</MudText>
+                        <MudText Class="texttitle  pt-3">Gateway Account</MudText>
+                        <MudText Class="h4">Stripe</MudText>
+                        <MudText Class="texttitle  pt-3">Last Name</MudText>
+                        <MudText Class="h4">Cosgrove</MudText>
+                     
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudPaper>
+             </MudItem>
+   
+</MudGrid>
+<MudGrid Class="pb-4">
+    <MudItem Class="align-left" xs="12" md="6" lg="6">
+        <MudText Class="h3">Finnancials</MudText>
+    </MudItem>
+    <MudItem class="align-right" lg="6" xs="12">
+        <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Contact</MudButton>
+    </MudItem>
+</MudGrid>
+
+<MudDivider DividerType="DividerType.FullWidth" Class="my-2" />
+
+<MudTabs  Class="pb-4" Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+    <MudTabPanel Text="Invoices">
+        <MudGrid>
+            <MudItem xs="12" lg="12">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    </MudTabPanel>
+    <MudTabPanel Text="Orders">
+        <MudGrid>
+            <MudItem xs="12" lg="12">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    </MudTabPanel>
+    <MudTabPanel Text="Credit Notes">
+        <MudGrid>
+            <MudItem xs="12" lg="12">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    </MudTabPanel>
+    <MudTabPanel Text="Transactions">
+        <MudGrid>
+            <MudItem xs="12" lg="12">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    </MudTabPanel> <MudTabPanel Text="Unbilled Charges">
+        <MudGrid>
+            <MudItem xs="12" lg="12">
+                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+                    
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    </MudTabPanel>
+ 
+</MudTabs>
+
+            @code{
+    private bool _loading;
+            }
