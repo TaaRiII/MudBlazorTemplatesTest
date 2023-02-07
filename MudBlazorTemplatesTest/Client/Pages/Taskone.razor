@@ -51,7 +51,7 @@
         font-variant: small-caps;
         /* Cool Gray */
 
-        color: #748AA3;
+        color: #748AA3 !important;
 }
 .h4{
         font-family: 'Segoe UI';
@@ -62,7 +62,7 @@
         /* identical to box height, or 143% */
         /* Highlight Text */
 
-        color: #001D4F;
+        color: #001D4F !important;
 }
 .linktext{
         display: block;
@@ -95,6 +95,22 @@
         display: inline-flex;
         flex-direction: column;
     }
+    .text-transform{
+        text-transform: capitalize;
+    }
+
+    .mud-button-icon-size-small > *:first-child{
+        font-size:12px !important;
+    }
+    .texticons{
+        font-size: 16px;
+        margin-top: 14px;
+        margin-right: 5px;
+
+    }
+    .paper-height{
+            min-height: 700px;
+    }
 
 </style>
 
@@ -113,7 +129,7 @@
 
  <MudGrid Class="pb-4">
         <MudItem xs="12" md="6" lg="6">
-<MudPaper  Class="pa-3" Outlined="true">
+<MudPaper  Class="paper-height pa-3" Outlined="true">
 
             <MudGrid>
                     <MudItem Class="pb-2" xs="12" lg="12">
@@ -152,38 +168,32 @@
                     <MudText Class="h3 ">Additional Contacts</MudText>
                 </MudItem>
                 <MudItem class="align-right" xs="12" md="6" lg="6">
-                    <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Contact</MudButton>
-      @*  <MudButton Class="shop-button" Size="Size.Small" Variant=" Variant.Filled" Color="Color.Primary">Shop for Cybersecurity Plans</MudButton>*@
-
-
-
+                    <MudButton Class="text-transform pl-4 pr-4 pb-1 pt-1" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small" EndIcon="@Icons.Material.Filled.Add">
+                        Add Contact 
+                    </MudButton>
                 </MudItem>
-            </MudGrid>
-            <MudGrid>
-                <MudItem>
-            @*        <MudTable Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+                <MudItem xs="12" md="12" lg="12">
+                    <MudTable Items="@TestList" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info" Elevation="4" Outlined="true">
                         <HeaderContent>
-                            <MudTh>Nr</MudTh>
-                            <MudTh>Sign</MudTh>
-                            <MudTh>Name</MudTh>
-                            <MudTh>Position</MudTh>
-                            <MudTh>Molar mass</MudTh>
+        <MudTh class="texttitle">Email</MudTh>
+        <MudTh class="texttitle">Email Profile</MudTh>
+                            
                         </HeaderContent>
                         <RowTemplate>
-                            <MudTd DataLabel="Nr">Number</MudTd>
-                            <MudTd DataLabel="Nr">Number</MudTd>
-                            <MudTd DataLabel="Nr">Number</MudTd>
-                            <MudTd DataLabel="Nr">Number</MudTd>
+        <MudTd DataLabel="Nr" Class="h4">admin@email.com</MudTd>
+        <MudTd DataLabel="Nr" class="h4">Billing, Account</MudTd>
+                        
 
                         </RowTemplate>
-                    </MudTable>*@
+                    </MudTable>
                 </MudItem>
             </MudGrid>
+        
 
 
         </MudPaper>
              </MudItem> <MudItem xs="12" md="6" lg="6">
-<MudPaper  Class="pa-3" Outlined="true">
+        <MudPaper Class="paper-height pa-3" Outlined="true">
 
             <MudGrid>
                     <MudItem Class="pb-2" xs="12" lg="12">
@@ -194,12 +204,25 @@
                     <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">Seattle - 98102</MudLink>
                     <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">Washington</MudLink>
                     <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">US</MudLink>
-                    <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">3534367536</MudLink>
-                    <MudLink Class="linktext  pt-3" Href="#"  Underline="Underline.None">
-                        @*<MudIcon @Icons.Material.Filled.LocalPhone Title="API" />*@
+                    <div class="d-flex">
+                        <MudIcon class="texticons linktext" Icon="@Icons.Material.Filled.LocalPhone" Title="LocalPhone" />
+                      
+
+                            <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">3534367536</MudLink>
+                    </div>
+                    <div class="d-flex">
+                        <MudIcon class="texticons linktext" Icon="@Icons.Material.Filled.MailOutline" Title="Favorite" />
+
+
+                        <MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">   miranda@email.com</MudLink>
+                    </div>
+                    @*<MudIcon Icon="@Icons.Material.Filled.Favorite" Title="Favorite" />*@
+
+                  @*  <MudLink Class="linktext" Href="#"  Underline="Underline.None">
+                        <MudIcon @Icons.Material.Filled.LocalPhone Title="API" />
                         miranda@email.com
-                    </MudLink>
-                 
+                    </MudLink>*@
+                    @*<MudIcon Icon="@Icons.Material.Filled.Favorite" Title="Favorite" />*@
                  
             </MudItem>
             </MudGrid>
@@ -209,7 +232,7 @@
                     <MudText Class="h3">Payment Methods</MudText>
                 </MudItem>
                 <MudItem class="align-right" lg="6" xs="12">
-                    <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Card</MudButton>
+                    <MudButton Class="text-transform pl-4 pr-4 pb-1 pt-1" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small" EndIcon="@Icons.Material.Filled.Add" x>Add Card</MudButton>
                 </MudItem>
             </MudGrid>
             <MudPaper Class="pa-3" Outlined="true">
@@ -218,7 +241,7 @@
                         <MudText Class="h3">VISA</MudText>
                     </MudItem>
                     <MudItem class="align-right"  lg="6" xs="12">
-                        <MudButton Class="infoBtn" Variant="Variant.Filled" Color="Color.Info" Size="Size.Small">Primary Card</MudButton>
+                        <MudButton Class="infoBtn text-transform" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Small">Primary Card</MudButton>
                     </MudItem>
                     <MudItem xs="12" lg="12">
 
@@ -255,19 +278,46 @@
         <MudText Class="h3">Finnancials</MudText>
     </MudItem>
     <MudItem class="align-right" lg="6" xs="12">
-        <MudButton Class="" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small">Add Contact</MudButton>
+        <MudButton Class="text-transform  pl-4 pr-4 pb-1 pt-1" Variant="Variant.Outlined" Color="Color.Info" Size="Size.Small" EndIcon="@Icons.Material.Filled.Add">Add Contact</MudButton>
     </MudItem>
 </MudGrid>
 
 <MudDivider DividerType="DividerType.FullWidth" Class="my-2" />
 
-<MudTabs Class="pb-4" Centered="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+<MudTabs Class="pb-4" Centered="true" ApplyEffectsToContainer="true" PanelClass="pa-1">
     <MudTabPanel Text="Invoices">
         <MudGrid>
             <MudItem xs="12" lg="12">
-                <MudPaper Height="210px" Class="pa-4 ma-2" Outlined="true">
+               
+                    <MudTable Items="@TestList" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info" Elevation="4" Outlined="true">
+                        <HeaderContent>
+                        <MudTh class="texttitle">INVOICE</MudTh>
+                        <MudTh class="texttitle">DATE</MudTh>
+                        <MudTh class="texttitle">AMOUNT</MudTh>
+                        <MudTh class="texttitle">STATUS</MudTh>
+                        <MudTh class="texttitle">DOWNLOAD</MudTh>
+
+                        </HeaderContent>
+                        <RowTemplate>
+
+                            @*<MudLink Class="linktext  pt-3" Href="#" Underline="Underline.None">3534367536</MudLink>*@
+                            <MudTd DataLabel="Nr" Icon="@Icons.Material.Filled.LocalPhone" Class="h4">
+                            <MudIcon class="mt-2" Icon="@Icons.Material.Filled.LocalPhone" Title="LocalPhone" />
+                            admin@email.com
+                          @*  <MudIcon class="mt-2" Icon="@Icons.Material.Filled.InfoOutlined" Title="InfoOutlined" />*@
+
+                            </MudTd>
                     
-                </MudPaper>
+                            <MudTd DataLabel="Nr" Class="h4">admin@email.com</MudTd>
+                            <MudTd DataLabel="Nr" class="h4">Billing, Account</MudTd>
+                            <MudTd DataLabel="Nr" class="h4">Billing, Account</MudTd>
+                        <MudTd DataLabel="Nr" class="h4">Billing, Account</MudTd>
+                        <MudTd DataLabel="Nr" class="h4">Billing, Account</MudTd>
+
+
+                        </RowTemplate>
+                    </MudTable>
+           
 
                 </MudItem>
         </MudGrid>
@@ -314,6 +364,77 @@
  
 </MudTabs>
 
+
+
+
+                @*    <MudTable Items="@TestList" Hover="true" Striped="true" Filter="new Func<TestModal,bool>(FilterCycleCheck)">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">My Table</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchterm" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>ID</MudTh>
+        <MudTh>Title</MudTh>
+        <MudTh>Name</MudTh>
+        <MudTh>Val1</MudTh>
+        <MudTh>Val2</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="id">@context.id</MudTd>
+        <MudTd DataLabel="Title">@context.Title</MudTd>
+        <MudTd DataLabel="Title">@context.Name</MudTd>
+        <MudTd DataLabel="val 1">@context.val1</MudTd>
+        <MudTd DataLabel="val 2">@context.val2</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[]{10,20}" />
+    </PagerContent>
+</MudTable>*@
+
+
             @code{
     private bool _loading;
+
+
+    public string TextValue { get; set; }
+    string searchterm = "";
+    List<TestModal> TestList = new List<TestModal>();
+    protected override async Task OnInitializedAsync()
+    {
+        var rnd = new Random();
+        for (int i = 0; i < 2; i++)
+        {
+
+            TestList.Add(new TestModal()
+                {
+                    id = Guid.NewGuid().ToString(),
+                    Title = "test" + i.ToString(),
+                    Name = "name" + i.ToString(),
+                    //val1 = rnd.Next(200, 5000),
+                    //val2 = rnd.Next(200, 5000)
+                });
+        }
+    }
+    private bool FilterCycleCheck(TestModal item)
+    {
+
+        if (item.Title.Contains(searchterm))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public class TestModal
+    {
+        public string? id { get; set; }
+        public string? Title { get; set; }
+        public string? Name { get; set; }
+        public int val1 { get; set; }
+        public int val2 { get; set; }
+
+    }
             }

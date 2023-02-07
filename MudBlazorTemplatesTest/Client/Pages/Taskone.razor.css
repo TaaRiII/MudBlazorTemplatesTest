@@ -1,0 +1,96 @@
+﻿::deep .h1 {
+    /* Bold/H1 */
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 28px;
+    /* identical to box height, or 88% */
+    /* Highlight Text */
+
+    color: #001D4F;
+}
+
+.h3 {
+    /* Bold/H3 */
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    /* Highlight Text */
+
+    color: #001D4F;
+}
+
+.h4 {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    /* Highlight Text */
+
+    color: #001D4F;
+}
+
+.texttitle {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    font-variant: small-caps;
+    /* Cool Gray */
+
+    color: #748AA3;
+}
+
+.h4 {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    /* Highlight Text */
+
+    color: #001D4F;
+}
+
+.linktext {
+    display: block;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    /* Primary */
+
+    color: #3978D3;
+}
+
+.infoBtn {
+    border-radius: 24px;
+}
+
+.align-right {
+    align-items: end;
+    /* padding: 0; */
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.align-left {
+    align-items: start;
+    /* padding: 0; */
+    display: inline-flex;
+    flex-direction: column;
+}
